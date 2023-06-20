@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@mipmap/denglu_back"
+    android:layout_height="match_parent"
+    tools:context=".Activity.zhuceAC">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="请输入用户名："
+        android:layout_marginTop="150dp"
+        />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请输入密码："
+            android:textSize="20sp"
+            android:layout_below="@id/textView2"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="19dp"
+             />
+
+    <EditText
+        android:id="@+id/et_in_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="145dp"
+        android:layout_toRightOf="@id/textView2" />
+
+    <EditText
+        android:id="@+id/et_in_password"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_in_name"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/textView3" />
+
+        <Button
+        android:id="@+id/btn_in_queren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/press_effect"
+            android:layout_marginLeft="250dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="200dp"
+        android:text="确认"
+       />
+
+
+
+
+
+    <Button
+        android:id="@+id/zhuce_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        android:background="@drawable/press_effect"
+        android:layout_marginLeft="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp" />
+
+</RelativeLayout>

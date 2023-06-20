@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Admin">
+    <Button
+        android:id="@+id/admin_back"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="退出"
+        android:background="@drawable/press_effect"/>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:text="ADMIN"
+    android:id="@+id/tit"
+    android:gravity="center_horizontal"
+    android:textSize="40sp"
+    android:background="@color/bbbb"/>
+
+    <ListView
+        android:layout_below="@+id/tit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:verticalSpacing="3dp"
+        android:id="@+id/ad_lv"/>
+</RelativeLayout>

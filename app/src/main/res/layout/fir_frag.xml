@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@mipmap/shouye_back"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/shou_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ease-Note"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        android:layout_marginTop="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <GridView
+        android:id="@+id/shouye_lv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/shou_title"
+        android:layout_height="600dp"
+        android:verticalSpacing="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/shou_title"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/shouye_in"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="此刻的想法是..."
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/shouye_btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存"
+        android:background="@drawable/press_effect"
+        android:layout_marginBottom="53dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/shouye_in"
+        tools:ignore="MissingConstraints" />
+
+
+</RelativeLayout>
