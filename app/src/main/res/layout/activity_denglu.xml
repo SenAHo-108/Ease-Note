@@ -10,31 +10,32 @@
     <EditText
         android:id="@+id/et_name"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="308dp"
+        android:background="@drawable/edit_background"
+        android:gravity="center"
+        android:hint="输入用户名"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:imeOptions="actionNone"
-        android:singleLine="true"
-        android:inputType="text" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="104dp"
+        android:background="@drawable/edit_background"
+        android:gravity="center"
+        android:hint="输入密码"
         android:password="true"
-        android:layout_marginEnd="52dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_name"
-        tools:ignore="MissingConstraints"
-        android:imeOptions="actionDone"
-        android:singleLine="true"
-        android:inputType="text"/>
-<!--     android:imeOptions="actionDone"
-        android:singleLine="true"  用于回车换行-->
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_denglu"
@@ -62,31 +63,6 @@
         app:layout_constraintVertical_bias="0.799"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="244dp"
-        android:text="请输入用户名："
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
-        android:text="请输入密码："
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_denglu"
-        app:layout_constraintEnd_toStartOf="@+id/et_password"
-        app:layout_constraintHorizontal_bias="0.236"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.105" />
 
     <TextView
         android:id="@+id/textView6"
@@ -100,6 +76,17 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cb_rem_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:text="记住密码"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintTop_toTopOf="@+id/et_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
