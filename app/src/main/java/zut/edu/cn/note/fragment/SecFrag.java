@@ -44,6 +44,7 @@ public class SecFrag extends Fragment {
             super.handleMessage(msg);
             if (msg.what == 1) {
                 textView.setText(results.get(anInt));
+                System.out.println("g");
             }
             if (msg.what == 2) {
                 Toast.makeText(getActivity(), "API请求出错，请联系管理员！", Toast.LENGTH_SHORT).show();
@@ -59,6 +60,7 @@ public class SecFrag extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sec_frag, container, false);
         textView = view.findViewById(R.id.sec_xiaohua);
+        System.out.println("n");
         btn = view.findViewById(R.id.btn_xiayige);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
