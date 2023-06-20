@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,17 +27,35 @@ public class dengluAC extends AppCompatActivity  {
     Button btn_zhuce;
     EditText et_uname;
     EditText et_pwd;
+    CheckBox cb_remember;
+    SharedPreferences remember;
+    Boolean b_remember=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denglu);
         init();
+
+
     }
 
     private void init(){
         et_pwd=findViewById(R.id.et_password);
         et_uname=findViewById(R.id.et_name);
         btn_denglu=findViewById(R.id.btn_denglu);
+        cb_remember=findViewById(R.id.cb_rem_pwd);
+        remember=getSharedPreferences("remember",MODE_PRIVATE);
+        cb_remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(buttonView.getId()==R.id.cb_rem_pwd){
+                    b_remember=isChecked;
+
+                }
+            }
+        });
+
+
         btn_denglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +67,7 @@ public class dengluAC extends AppCompatActivity  {
                 Toast.makeText(dengluAC.this,"您输入的信息为空！",Toast.LENGTH_SHORT).show();
             }
                else if (compete()){
+
                      Intent intent=new Intent(dengluAC.this,shouyeAc.class);
                      intent.putExtra("username",username);
                      Toast.makeText(dengluAC.this,"欢迎您使用Ease-Note\n              "
@@ -55,11 +75,23 @@ public class dengluAC extends AppCompatActivity  {
                      startActivity(intent);
                      finish();
                 }
+
                else{
                      Toast.makeText(dengluAC.this,"您输入的信息有误！",Toast.LENGTH_SHORT).show();
                  }
+                if(cb_remember.isChecked()){
+                    SharedPreferences.Editor editor=remember.edit();
+                    editor.putString("uname",et_uname.getText().toString());
+                    editor.putString("pwd",et_pwd.getText().toString());
+                    editor.putBoolean("isremember",cb_remember.isChecked());
+                    editor.commit();
+                }
             }
         });
+
+
+        remember = getSharedPreferences("remember", MODE_PRIVATE);
+        reload();
         btn_zhuce=findViewById(R.id.btn_zhuce);
         btn_zhuce.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +99,7 @@ public class dengluAC extends AppCompatActivity  {
                 startActivity(new Intent(dengluAC.this,zhuceAC.class));
             }
         });
+
 
     }
     private boolean compete(){
@@ -106,6 +139,20 @@ public class dengluAC extends AppCompatActivity  {
     }
 
     }
+
+    //对SharePreference中的数据进行读取
+    public void reload(){
+        boolean isremember=remember.getBoolean("isremember",false);
+        if(isremember){
+            String uname=remember.getString("uname","");
+            String pwd=remember.getString("pwd","");
+            et_uname.setText(uname);
+            et_pwd.setText(pwd);
+
+        }
+    }
+
+
 
 
 
