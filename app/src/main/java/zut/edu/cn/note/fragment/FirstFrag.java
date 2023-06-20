@@ -65,7 +65,6 @@ public class FirstFrag extends Fragment {
     }
 
     private void init() {
-        System.out.println("test");
         gv = view.findViewById(R.id.shouye_lv);
         btn_add = view.findViewById(R.id.shouye_btn_add);
         username = getActivity().getIntent().getStringExtra("username");  //得到用户的username
