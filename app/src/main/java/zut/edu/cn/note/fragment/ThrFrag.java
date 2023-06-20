@@ -86,7 +86,7 @@ public class ThrFrag extends Fragment {
                         db.update("user", values, "username=?", new String[]{username});
                         Toast.makeText(getActivity(), "修改成功", Toast.LENGTH_SHORT).show();
                     }
-                }).setNegativeButton("取消", null).show();
+                }).setNegativeButton("取消", null).setCancelable(false).show();
     }
 
     private void delete() {

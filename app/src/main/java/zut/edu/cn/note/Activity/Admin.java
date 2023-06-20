@@ -75,7 +75,7 @@ public class Admin extends AppCompatActivity {
                                result.set(i, arrayList.get(i) + "---" + arrayList1.get(i));
                                Toast.makeText(Admin.this, "修改成功，新密码为：" + et.getText().toString(), Toast.LENGTH_SHORT).show();
                            }
-                       }).setNegativeButton("取消", null).show();
+                       }).setNegativeButton("取消", null).setCancelable(false).show();
 
                adapter.notifyDataSetChanged();
            }

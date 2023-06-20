@@ -86,7 +86,7 @@ public class FirstFrag extends Fragment {
                         Toast.makeText(getActivity(), "修改成功", Toast.LENGTH_SHORT).show();
                         adapter.notifyDataSetChanged();
                     }
-                }).setNegativeButton("取消", null).show();
+                }).setNegativeButton("取消", null).setCancelable(false).show();
             }
         });
         gv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
