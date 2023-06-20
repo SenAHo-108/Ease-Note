@@ -61,7 +61,7 @@ public class FirstFrag extends Fragment {
          */
         adapter = new ArrayAdapter(getActivity(), R.layout.item1, arrayList);
         gv.setAdapter(adapter);
-        Log.i("testgit","1");
+
         return view;
     }
 
