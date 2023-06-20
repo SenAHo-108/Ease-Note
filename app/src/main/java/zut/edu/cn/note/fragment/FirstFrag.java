@@ -56,6 +56,7 @@ public class FirstFrag extends Fragment {
         if (arrayList.size() == 0) {
             add();
         }
+        System.out.println("d");
         /**
          * 把数据加载到列表上
          */
