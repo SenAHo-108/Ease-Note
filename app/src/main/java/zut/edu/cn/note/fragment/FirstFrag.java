@@ -56,7 +56,6 @@ public class FirstFrag extends Fragment {
         if (arrayList.size() == 0) {
             add();
         }
-        System.out.println("d");
         /**
          * 把数据加载到列表上
          */
@@ -66,7 +65,6 @@ public class FirstFrag extends Fragment {
     }
 
     private void init() {
-        System.out.println("ssss");
         gv = view.findViewById(R.id.shouye_lv);
         btn_add = view.findViewById(R.id.shouye_btn_add);
         username = getActivity().getIntent().getStringExtra("username");  //得到用户的username
@@ -135,7 +133,6 @@ public class FirstFrag extends Fragment {
                     Cursor cursor = db.rawQuery(sql, new String[]{username, editText.getText().toString()});
                     cursor.moveToFirst();
                     int count = cursor.getCount();
-                    Log.i("tag1", count + "");
                     if (count == 0) {
                         values.put("username", username);
                         values.put("record", editText.getText().toString());
