@@ -61,12 +61,11 @@ public class FirstFrag extends Fragment {
          */
         adapter = new ArrayAdapter(getActivity(), R.layout.item1, arrayList);
         gv.setAdapter(adapter);
-
         return view;
     }
 
     private void init() {
-
+        System.out.println("test");
         gv = view.findViewById(R.id.shouye_lv);
         btn_add = view.findViewById(R.id.shouye_btn_add);
         username = getActivity().getIntent().getStringExtra("username");  //得到用户的username
